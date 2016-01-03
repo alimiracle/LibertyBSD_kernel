@@ -431,7 +431,7 @@ bios_getdisklabel(bios_diskinfo_t *bd, struct disklabel *label)
 		if (start == (u_int)-1) {
 			if (err != NULL)
 				return (err);
- 			return "no LibertyBSD partition\n";
+ 			return "no OpenBSD partition\n";
 		}
 	}
 	start = LABELSECTOR + start;
