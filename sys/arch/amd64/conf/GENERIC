@@ -361,9 +361,9 @@ qla*	at pci?				# QLogic ISP 2[123]xx FibreChannel
 qle*	at pci?				# QLogic ISP 2[45]xx FibreChannel
 aic*	at pcmcia?			# PCMCIA Adaptec 152[02] SCSI
 #esp*	at pcmcia?			# PCMCIA based NCR 53C9X SCSI
-siop*	at pci?				# NCR 538XX SCSI controllers
+#siop*	at pci?				# NCR 538XX SCSI controllers
 #adv*	at pci?				# AdvanSys 1200A/B and ULTRA SCSI
-adw*	at pci?				# AdvanSys ULTRA WIDE SCSI
+#adw*	at pci?				# AdvanSys ULTRA WIDE SCSI
 pcscp*	at pci?				# AMD 53c974 PCscsi-PCI SCSI
 #trm*	at pci?				# Tekram DC-3x5U SCSI Controllers
 vmwpvs*	at pci?				# VMware ParaVirtual SCSI
@@ -404,8 +404,8 @@ atapiscsi* at pciide?
 
 # Networking devices
 de*	at pci?				# DC21X4X-based ethernet
-fxp*	at pci?				# EtherExpress 10/100B ethernet
-fxp*	at cardbus?			# Intel PRO/100 ethernet
+#fxp*	at pci?				# EtherExpress 10/100B ethernet
+#fxp*	at cardbus?			# Intel PRO/100 ethernet
 ne*	at pci?				# NE2000-compat ethernet
 ep*	at pci?				# 3C59x ethernet
 ne*	at pcmcia?			# PCMCIA based NE2000 ethernet
