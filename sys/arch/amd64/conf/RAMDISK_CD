@@ -137,8 +137,8 @@ ips*		at pci?			# IBM ServeRAID controllers
 qlw*		at pci?			# QLogic ISP SCSI
 qla*		at pci?			# QLogic ISP 2[123]xx FibreChannel
 qle*		at pci?			# QLogic ISP 2[45]xx FibreChannel
-siop*		at pci?			# NCR 538XX SCSI controllers(new)
-adw*		at pci?			# AdvanSys ULTRA WIDE SCSI
+#siop*		at pci?			# NCR 538XX SCSI controllers(new)
+#adw*		at pci?			# AdvanSys ULTRA WIDE SCSI
 pcscp*		at pci?			# AMD 53c974 PCscsi-PCI SCSI
 vmwpvs*		at pci?			# VMware ParaVirtual SCSI
 softraid0	at root
