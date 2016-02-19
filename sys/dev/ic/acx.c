@@ -1616,7 +1616,7 @@ acx_load_radio_firmware(struct acx_softc *sc, const char *name)
 	free(ucode, M_DEVBUF, 0);
 
 	if (error) {
-		printf("%s: can't load radio firmware\n", ifp->if_xname);
+		printf("%s: non-free firmware avoided\n", ifp->if_xname);
 		return (ENXIO);
 	}
 	DPRINTF(("%s: radio firmware loaded\n", sc->sc_dev.dv_xname));

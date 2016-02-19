@@ -2283,7 +2283,7 @@ iwi_init(struct ifnet *ifp)
 	fw = (const char *)data + sizeof (struct iwi_firmware_hdr) +
 	    letoh32(hdr->bootsz) + letoh32(hdr->ucodesz);
 	if ((error = iwi_load_firmware(sc, fw, letoh32(hdr->mainsz))) != 0) {
-		printf("%s: could not load main firmware\n",
+		printf("%s: main non-free firmware avoided\n",
 		    sc->sc_dev.dv_xname);
 		goto fail2;
 	}

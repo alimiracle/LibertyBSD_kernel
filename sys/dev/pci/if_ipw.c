@@ -209,6 +209,7 @@ ipw_attach(struct device *parent, struct device *self, void *aux)
 	task_set(&sc->sc_authandassoctask, ipw_auth_and_assoc, sc);
 
 	if (ipw_reset(sc) != 0) {
+	  
 		printf(": could not reset adapter\n");
 		return;
 	}
@@ -2008,7 +2009,7 @@ ipw_init(struct ifnet *ifp)
 	    sc->status_map->dm_segs[0].ds_addr);
 
 	if ((error = ipw_load_firmware(sc, fw.main, fw.main_size)) != 0) {
-		printf("%s: could not load firmware\n", sc->sc_dev.dv_xname);
+		printf("%s: non-free firmware avoided\n", sc->sc_dev.dv_xname);
 		goto fail2;
 	}
 	sc->sc_flags |= IPW_FLAG_FW_INITED;

@@ -5470,7 +5470,7 @@ iwm_init_hw(struct iwm_softc *sc)
 	/* omstart, this time with the regular firmware */
 	error = iwm_mvm_load_ucode_wait_alive(sc, IWM_UCODE_TYPE_REGULAR);
 	if (error) {
-		printf("%s: could not load firmware\n", DEVNAME(sc));
+		printf("%s: non-free firmware avoided\n", DEVNAME(sc));
 		goto error;
 	}
 
