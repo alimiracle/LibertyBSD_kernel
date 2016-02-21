@@ -3647,15 +3647,16 @@ uvideo_ucode_loader_ricoh(struct uvideo_softc *sc)
 		return (USBD_INVAL);
 	}
 	if (cbuf) {
-		DPRINTF(1, "%s: microcode already loaded\n", DEVNAME(sc));
+		DPRINTF(1, "%s: non-free microcode already loaded\n", DEVNAME(sc));
 		return (USBD_NORMAL_COMPLETION);
 	} else {
-		DPRINTF(1, "%s: microcode not loaded\n", DEVNAME(sc));
+		DPRINTF(1, "%s: non-free microcode not loaded\n", DEVNAME(sc));
 	}
 
 	/* open microcode file */
 	error = loadfirmware(sc->sc_quirk->ucode_name, &ucode, &ucode_size);
-	if (error != 0) {
+	if
+	  (error != 0) {
 		printf("%s: loadfirmware error=%d!\n", DEVNAME(sc), error);
 		return (USBD_INVAL);
 	}
@@ -3720,7 +3721,7 @@ uvideo_ucode_loader_apple_isight(struct uvideo_softc *sc)
 	/* open microcode file */
 	error = loadfirmware(sc->sc_quirk->ucode_name, &ucode, &ucode_size);
 	if (error != 0) {
-		printf("%s: loadfirmware error=%d!\n", DEVNAME(sc), error);
+		printf("%s: non-freeloadfirmware error=%d!\n", DEVNAME(sc), error);
 		return (USBD_INVAL);
 	}
 

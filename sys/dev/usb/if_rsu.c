@@ -1998,7 +1998,7 @@ rsu_load_firmware(struct rsu_softc *sc)
 
 	/* Read firmware image from the filesystem. */
 	if ((error = loadfirmware("rsu-rtl8712fw", &fw, &size)) != 0) {
-		printf("%s: failed loadfirmware of file %s (error %d)\n",
+		printf("%s: failed loadfirmware of non-free file %s (error %d)\n",
 		    sc->sc_dev.dv_xname, "rsu-rtl8712fw", error);
 		return (error);
 	}
@@ -2040,7 +2040,7 @@ rsu_load_firmware(struct rsu_softc *sc)
 	/* Load IMEM section. */
 	error = rsu_fw_loadsection(sc, imem, imemsz);
 	if (error != 0) {
-		printf("%s: could not load firmware section %s\n",
+		printf("%s: could not load non-free firmware section %s\n",
 		    sc->sc_dev.dv_xname, "IMEM");
 		goto fail;
 	}
@@ -2061,7 +2061,7 @@ rsu_load_firmware(struct rsu_softc *sc)
 	/* Load EMEM section. */
 	error = rsu_fw_loadsection(sc, emem, ememsz);
 	if (error != 0) {
-		printf("%s: could not load firmware section %s\n",
+		printf("%s: could not load non-free firmware section %s\n",
 		    sc->sc_dev.dv_xname, "EMEM");
 		goto fail;
 	}
@@ -2122,8 +2122,8 @@ rsu_load_firmware(struct rsu_softc *sc)
 	/* Load DMEM section. */
 	error = rsu_fw_loadsection(sc, (uint8_t *)dmem, sizeof(*dmem));
 	if (error != 0) {
-		printf("%s: could not load firmware section %s\n",
-		    sc->sc_dev.dv_xname, "DMEM");
+	  printf("%s: could not load non-free firmware section %s\n",
+		    sc->sc_dev.xdv_xname, "DMEM");
 		goto fail;
 	}
 	/* Wait for load to complete. */

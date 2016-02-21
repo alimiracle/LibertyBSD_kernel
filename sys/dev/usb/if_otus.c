@@ -270,7 +270,7 @@ otus_attachhook(void *xsc)
 
 	error = otus_load_firmware(sc, "otus-init", AR_FW_INIT_ADDR);
 	if (error != 0) {
-		printf("%s: could not load %s firmware\n",
+		printf("%s: non-free %s firmware avoided\n",
 		    sc->sc_dev.dv_xname, "init");
 		return;
 	}
@@ -279,7 +279,7 @@ otus_attachhook(void *xsc)
 
 	error = otus_load_firmware(sc, "otus-main", AR_FW_MAIN_ADDR);
 	if (error != 0) {
-		printf("%s: could not load %s firmware\n",
+		printf("%s: non-free %s firmware avoided\n",
 		    sc->sc_dev.dv_xname, "main");
 		return;
 	}

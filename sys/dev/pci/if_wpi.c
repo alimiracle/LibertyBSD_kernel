@@ -3212,7 +3212,7 @@ wpi_hw_init(struct wpi_softc *sc)
 	WPI_WRITE(sc, WPI_UCODE_GP1_CLR, WPI_UCODE_GP1_RFKILL);
 
 	if ((error = wpi_load_firmware(sc)) != 0) {
-		printf("%s: could not load firmware\n", sc->sc_dev.dv_xname);
+		printf("%s: avoided non-free firmware\n", sc->sc_dev.dv_xname);
 		return error;
 	}
 	/* Wait at most one second for firmware alive notification. */

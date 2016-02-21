@@ -2522,7 +2522,7 @@ urtwn_load_firmware(struct urtwn_softc *sc)
 	else
 		name = "urtwn-rtl8192cfwT";
 	if ((error = loadfirmware(name, &fw, &len)) != 0) {
-		printf("%s: failed loadfirmware of file %s (error %d)\n",
+		printf("%s: avoided loadfirmware of non-free file %s (error %d)\n",
 		    sc->sc_dev.dv_xname, name, error);
 		return (error);
 	}
@@ -2569,7 +2569,7 @@ urtwn_load_firmware(struct urtwn_softc *sc)
 		mlen = MIN(len, R92C_FW_PAGE_SIZE);
 		error = urtwn_fw_loadpage(sc, page, ptr, mlen);
 		if (error != 0) {
-			printf("%s: could not load firmware page %d\n",
+			printf("%s: avoided load non-free firmware page %d\n",
 			    sc->sc_dev.dv_xname, page);
 			goto fail;
 		}

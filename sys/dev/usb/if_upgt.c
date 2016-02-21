@@ -828,10 +828,10 @@ upgt_fw_load(struct upgt_softc *sc)
 			break;	/* firmware load was successful */
 	}
 	if (i == UPGT_FIRMWARE_TIMEOUT) {
-		printf("%s: firmware load failed!\n", sc->sc_dev.dv_xname);
+		printf("%s: non-free firmware avoided\n", sc->sc_dev.dv_xname);
 		return (EIO);
 	}
-	DPRINTF(1, "%s: firmware loaded\n", sc->sc_dev.dv_xname);
+	DPRINTF(1, "%s: non-free firmware loaded\n", sc->sc_dev.dv_xname);
 
 	return (0);
 }
@@ -1615,7 +1615,6 @@ upgt_tx_done(struct upgt_softc *sc, uint8_t *data)
 
 	for (i = 0; i < UPGT_TX_COUNT; i++) {
 		struct upgt_data *data_tx = &sc->tx_data[i];
-
 		if (data_tx->addr == letoh32(desc->header2.reqid)) {
 			upgt_mem_free(sc, data_tx->addr);
 			ieee80211_release_node(ic, data_tx->ni);
